@@ -1,102 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Loja de Carros</title>
+    <title>Motor Classics</title>
 </head>
+
 <body>
-
-    <div class="container">
-        <h1>Loja de Carros</h1>
-
-        <!-- ... (código anterior) ... -->
-
-<div class="car-list">
-    <div class="car">
-        <img src="/assets/img/car1.jpg" alt="Carro 1">
-        <h2>Bel Air</h2>
-        <p>Ano: 1955</p>
-        <p>Preço: R$ 160.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 1', 160000)">Adicionar ao Carrinho</button>
+    <!-- Barra Social -->
+    <div class="social-bar">
+        <a href="#" target="_blank" class="social-icon"><img src="/assets/img/facebook-icon.png" alt="Facebook"></a>
+        <a href="#" target="_blank" class="social-icon"><img src="/assets/img/twitter-icon.png" alt="Twitter"></a>
+        <a href="#" target="_blank" class="social-icon"><img src="/assets/img/Instagram_icon.png" alt="Instagram"></a>
     </div>
 
-    <div class="car">
-        <img src="/assets/img/car2.jpg" alt="Carro 2">
-        <h2>Volkswagen Brasilia</h2>
-        <p>Ano: 1985</p>
-        <p>Preço: R$ 40.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 2', 40000)">Adicionar ao Carrinho</button>
+    <!-- Barra Superior -->
+    <div class="top-bar">
+        <h1 class="logo-marca">Motor Classic</h1>
+        <div class="cart-container">
+            <div class="cart-icon" id="cart-icon">
+                <img src="/assets/img/cart-icon.png" alt="Carrinho">
+            </div>
+            <!-- Carrinho de Compras -->
+            <div class="carrinho" id="carrinho">
+                <h2>Carrinho de Compras</h2>
+                <ul id="carrinho-lista"></ul>
+                <p id="total">Total: R$ 0,00</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Adicione mais carros conforme necessário -->
-    <div class="car">
-        <img src="/assets/img/car3.jpeg" alt="Carro 3">
-        <h2>Ford Model A</h2>
-        <p>Ano: 1974</p>
-        <p>Preço: R$ 55.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 3', 55000)">Adicionar ao Carrinho</button>
+    <!-- Navegação -->
+    <div class="navigation">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Carros Novos</a></li>
+            <li><a href="#">Carros Usados</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
     </div>
 
-    <div class="car">
-        <img src="/assets/img/car4.jpg" alt="Carro 4">
-        <h2>Buick Roadmaster</h2>
-        <p>Ano: 1940</p>
-        <p>Preço: R$ 440.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 4', 440000)">Adicionar ao Carrinho</button>
+    <!-- Lista de Carros -->
+    <div class="car-list">
+        <!-- Carro 1 -->
+        <div class="car">
+            <img src="/assets/img/car1.jpg" alt="Carro 1">
+            <h2>Bel Air</h2>
+            <p>Ano: 1955</p>
+            <p>Preço: R$ 160.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 1', 160000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 2 -->
+        <div class="car">
+            <img src="/assets/img/car2.jpg" alt="Carro 2">
+            <h2>Volkswagen Brasilia</h2>
+            <p>Ano: 1985</p>
+            <p>Preço: R$ 40.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 2', 40000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 3 -->
+        <div class="car">
+            <img src="/assets/img/car3.jpeg" alt="Carro 3">
+            <h2>Ford Model A</h2>
+            <p>Ano: 1974</p>
+            <p>Preço: R$ 55.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 3', 55000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 4 -->
+        <div class="car">
+            <img src="/assets/img/car4.jpg" alt="Carro 4">
+            <h2>Buick Roadmaster</h2>
+            <p>Ano: 1940</p>
+            <p>Preço: R$ 440.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 4', 440000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 5 -->
+        <div class="car">
+            <img src="/assets/img/car5.jpg" alt="Carro 5">
+            <h2>Chevrolet Opala Blue</h2>
+            <p>Ano: 1980</p>
+            <p>Preço: R$ 90.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 5', 90000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 6 -->
+        <div class="car">
+            <img src="/assets/img/car6.jpg" alt="Carro 6">
+            <h2>Chevrolet Opala Green</h2>
+            <p>Ano: 1985</p>
+            <p>Preço: R$ 65.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 6', 65000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 7 -->
+        <div class="car">
+            <img src="/assets/img/car7.jpg" alt="Carro 7">
+            <h2>Puma GT</h2>
+            <p>Ano: 1967</p>
+            <p>Preço: R$ 4.000.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 7', 4200000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 8 -->
+        <div class="car">
+            <img src="/assets/img/car8.jpg" alt="Carro 8">
+            <h2>Ford Model T</h2>
+            <p>Ano: 1908</p>
+            <p>Preço: R$ 750.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 8', 750000)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Carro 9 -->
+        <div class="car">
+            <img src="/assets/img/car9.jpg" alt="Carro 9">
+            <h2>Volkswagen Fusca</h2>
+            <p>Ano: 1966</p>
+            <p>Preço: R$ 75.000,00</p>
+            <button onclick="adicionarAoCarrinho('Modelo 9', 75000)">Adicionar ao Carrinho</button>
+        </div>
     </div>
 
-    <div class="car">
-        <img src="/assets/img/car5.jpg" alt="Carro 5">
-        <h2>Chevrolet Opala Blue</h2>
-        <p>Ano: 1980</p>
-        <p>Preço: R$ 90.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 5', 90000)">Adicionar ao Carrinho</button>
-    </div>
+    <!-- Barra de Contato -->
+    <div class="barra-contato">
+        <div class="container">
+            <!-- Departamentos -->
+            <div class="departamentos">
+                <h3>Departamentos</h3>
+                <ul>
+                    <li>Ar e Ventilação</li>
+                    <li>Artesanato</li>
+                    <!-- ... (outros departamentos) ... -->
+                </ul>
+            </div>
 
-    <div class="car">
-        <img src="/assets/img/car6.jpg" alt="Carro 6">
-        <h2>Chevrolet Opala Green</h2>
-        <p>Ano: 1985</p>
-        <p>Preço: R$ 65.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 6', 65000)">Adicionar ao Carrinho</button>
-    </div>
+            <!-- Venda Seus Produtos -->
+            <div class="venda-seus-produtos">
+                <h3>Venda Seus Produtos</h3>
+                <ul>
+                    <li>Ar e Ventilação</li>
+                    <li>Artesanato</li>
+                    <!-- ... (outros departamentos) ... -->
+                </ul>
+                <!-- Informações sobre venda de produtos -->
+            </div>
 
-    <div class="car">
-        <img src="/assets/img/car7.jpg" alt="Carro 7">
-        <h2>Puma GT</h2>
-        <p>Ano: 1967</p>
-        <p>Preço: R$ 4.000.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 7', 4200000)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="car">
-        <img src="/assets/img/car8.jpg" alt="Carro 8">
-        <h2>Ford Model T</h2>
-        <p>Ano: 1908</p>
-        <p>Preço: R$ 750.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 8', 750000)">Adicionar ao Carrinho</button>
-    </div>
-
-    <div class="car">
-        <img src="/assets/img/car9.jpg" alt="Carro 8">
-        <h2>Volkswagen Fusca</h2>
-        <p>Ano: 1966</p>
-        <p>Preço: R$ 75.000,00</p>
-        <button onclick="adicionarAoCarrinho('Modelo 8', 75000)">Adicionar ao Carrinho</button>
-    </div>
-</div>
-
-<!-- ... (código posterior) ... -->
-
-        <div class="carrinho">
-            <h2>Carrinho de Compras</h2>
-            <ul id="carrinho-lista"></ul>
-            <p id="total">Total: R$ 0,00</p>
+            <!-- Central de Atendimento -->
+            <div class="central-atendimento">
+                <h3>Central de Atendimento</h3>
+                <ul>
+                    <li>Ar e Ventilação</li>
+                    <li>Artesanato</li>
+                    <!-- ... (outros departamentos) ... -->
+                </ul>
+                <!-- Informações sobre a central de atendimento -->
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
