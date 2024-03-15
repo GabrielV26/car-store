@@ -44,10 +44,20 @@ function toggleCart() {
     }
 
     const carrinhoElement = document.querySelector('.carrinho');
-    carrinhoElement.style.display = carrinhoVisivel ? 'block' : 'none';
+    const cartIcon = document.getElementById('cart-icon');
+
+    if (carrinhoVisivel) {
+        // Se o carrinho estiver visível, posicione-o abaixo do ícone do carrinho
+        const iconRect = cartIcon.getBoundingClientRect();
+        carrinhoElement.style.top = `${iconRect.bottom}px`;
+        carrinhoElement.style.left = `${iconRect.left}px`;
+        carrinhoElement.style.display = 'block';
+    } else {
+        // Se o carrinho estiver oculto, simplesmente esconda-o
+        carrinhoElement.style.display = 'none';
+    }
 }
 
-// ... (seu código JavaScript existente) ...
 
 document.addEventListener('DOMContentLoaded', function() {
     const cartIcon = document.getElementById('cart-icon');
