@@ -214,45 +214,65 @@ button:hover {
     background-color: firebrick;
 }
 
-/* Seus estilos CSS existentes */
-/* Seus estilos CSS existentes */
-
+/*NOVA barra de contato*/
 .barra-contato {
-    background-color: var(--cor-secundaria);
+    background-color: #f9f9f9;
     padding: 20px 0;
 }
 
-.barra-contato .container {
+.container {
+    max-width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    border: 1px solid var(--cor-texto-secundaria);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.barra-contato h3 {
-    color: var(--cor-texto-primaria);
+.info-contato,
+.form-contato {
+    flex: 1;
+    padding: 0 20px;
 }
 
-.barra-contato ul {
+.info-contato h3,
+.form-contato h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-contato ul {
     list-style-type: none;
     padding: 0;
 }
 
-.barra-contato li {
+.info-contato ul li {
+    margin-bottom: 5px;
+}
+
+.form-contato input[type="text"],
+.form-contato input[type="email"],
+.form-contato textarea {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
-    color: var(--cor-texto-secundaria);
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.barra-contato .venda-seus-produtos,
-.barra-contato .central-atendimento {
-    flex: 1;
-    margin-left: 20px;
+.form-contato button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Adiciona um efeito de hover sutil */
-.barra-contato a:hover {
-    color: var(--cor-primaria);
-    transition: color 0.3s ease;
+.form-contato button:hover {
+    background-color: #555;
 }
+
 
 /* ... (seus estilos CSS existentes) ... */
 /* Adicione estas media queries ao final do seu CSS */
