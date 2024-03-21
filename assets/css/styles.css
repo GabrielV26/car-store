@@ -167,7 +167,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-right: 10px;
 }
 
@@ -272,6 +272,47 @@ button:hover {
 .form-contato button:hover {
     background-color: #555;
 }
+
+.slideshow-container {
+    position: relative;
+    max-width: auto;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .slide-img {
+    width: 100%;
+    height: 600px;
+}
+
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
 
 
 /* ... (seus estilos CSS existentes) ... */
