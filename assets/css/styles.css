@@ -88,7 +88,7 @@ button:hover {
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: none;
-    
+    z-index: 9999;
 }
 
 
@@ -164,11 +164,12 @@ button:hover {
 /* ... Código anterior ... */
 
 .top-bar {
+    margin-top: -20px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 0px;
-    margin-right: 10px;
+    margin-bottom: -20px;
+    margin-right: 20px;
 }
 
 .logo-marca {
@@ -180,8 +181,8 @@ button:hover {
 }
 
 .cart-icon img {
-    width: 30px;
-    height: 30px;
+    width: 23px;
+    height: 20px;
     cursor: pointer;
 }
 
