@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="/assets/img/icon.png" type="Motor Classic">
     <title>Motor Classics</title>
 </head>
 
 <body>
     <!-- Barra Social -->
     <div class="social-bar">
-        <div class="logo-marca">
-            <h1 class="logo-marca">Motor Classic</h1>
+        <div>
+            <img src="assets/img/logo-motor-classic.png" class="logo-icon" alt="logo icon">
         </div>
         <div class="rede-sociais">
             <a href="#" target="_blank" class="social-icon"><img src="/assets/img/facebook.png" alt="Facebook"></a>
             <a href="#" target="_blank" class="social-icon"><img src="/assets/img/twitter.png" alt="Twitter"></a>
-            <a href="#" target="_blank" class="social-icon"><img src="/assets/img/instagram.png"
-                    alt="Instagram"></a>
+            <a href="#" target="_blank" class="social-icon"><img src="/assets/img/instagram.png" alt="Instagram"></a>
         </div>
     </div>
     <!-- Barra Superior -->
@@ -46,21 +46,21 @@
     </div>
     <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="/assets/img/slide1.png" class="slide-img">
+            <img src="/assets/img/slide1.png" class="slide-img">
         </div>
-      
+
         <div class="mySlides fade">
-          <img src="/assets/img/slide2.png" class="slide-img">
+            <img src="/assets/img/slide2.png" class="slide-img">
         </div>
-      
+
         <div class="mySlides fade">
-          <img src="/assets/img/slide3.png" class="slide-img">
+            <img src="/assets/img/slide3.png" class="slide-img">
         </div>
-      
+
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-      
+    </div>
+
 
     <!-- Lista de Carros -->
     <div class="car-list">
@@ -68,81 +68,100 @@
         <div class="car">
             <img src="/assets/img/car1.png" alt="Carro 1">
             <h2>Bel Air</h2>
+            <p>Chevrolet Bel Air de 1955 é o clássico americano, símbolo de elegância, potência e estilo atemporal na
+                era dourada dos automóveis.</p>
             <p>Ano: 1955</p>
             <p>Preço: R$ 160.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 1', 160000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Chevrolet Bel Air de 1955', 160000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 2 -->
         <div class="car">
             <img src="/assets/img/car2.png" alt="Carro 2">
             <h2>Volkswagen Brasilia</h2>
+            <p>Volkswagen Brasília 1985 tem design único, versatilidade urbana e confiabilidade alemã, marcando presença
+                nas ruas brasileiras.</p>
             <p>Ano: 1985</p>
             <p>Preço: R$ 40.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 2', 40000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Volkswagen Brasília 1985', 40000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 3 -->
         <div class="car">
             <img src="/assets/img/car3.png" alt="Carro 3">
             <h2>Ford Model A</h2>
-            <p>Ano: 1974</p>
+            <p>Ford Model A de 1931 é um ícone da era da Grande Depressão, unindo estilo vintage, desempenho robusto e
+                pioneirismo na indústria automotiva.</p>
+            <p>Ano: 1931</p>
             <p>Preço: R$ 55.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 3', 55000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Ford Model A de 1931', 55000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 4 -->
         <div class="car">
             <img src="/assets/img/car4.png" alt="Carro 4">
             <h2>Buick Roadmaster</h2>
+            <p>O Buick Roadmaster de 1940 é um ícone de luxo e potência, com seu motor inline-eight de 5.2 litros,
+                elegância cromada e conforto interior, proporcionando uma experiência de condução excepcionalmente suave
+                e sofisticada.</p>
             <p>Ano: 1940</p>
             <p>Preço: R$ 440.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 4', 440000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('O Buick Roadmaster de 1940', 440000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 5 -->
         <div class="car">
             <img src="/assets/img/car5.png" alt="Carro 5">
-            <h2>Chevrolet Opala Blue</h2>
-            <p>Ano: 1980</p>
+            <h2>Chevrolet Opala SS</h2>
+            <p>Chevrolet Opala SS 1976 tem potência pura, design esportivo e o ronco inconfundível do V8, marcando uma
+                era de lendas nas estradas.</p>
+            <p>Ano: 1976</p>
             <p>Preço: R$ 90.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 5', 90000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Chevrolet Opala SS 1976', 90000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 6 -->
         <div class="car">
             <img src="/assets/img/car6.png" alt="Carro 6">
             <h2>Chevrolet Opala Green</h2>
+            <p>Chevrolet Opala 1985 é ícone nacional, combina potência e elegância em um clássico brasileiro de
+                destaque.</p>
             <p>Ano: 1985</p>
             <p>Preço: R$ 65.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 6', 65000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Chevrolet Opala 1985', 65000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 7 -->
         <div class="car">
             <img src="/assets/img/car7.png" alt="Carro 7">
             <h2>Puma GT</h2>
+            <p>Puma GT 1967 é o clássico brasileiro, mistura de potência e design arrojado, deixando sua marca nas
+                estradas com estilo e velocidade.</p>
             <p>Ano: 1967</p>
             <p>Preço: R$ 4.000.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 7', 4200000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Puma GT 1967', 4200000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 8 -->
         <div class="car">
             <img src="/assets/img/car8.png" alt="Carro 8">
             <h2>Ford Model T</h2>
+            <p>Ford Model T de 1908 é o pioneiro revolucionário, símbolo da democratização do automóvel, moldando o
+                futuro das viagens e da indústria automobilística.</p>
             <p>Ano: 1908</p>
             <p>Preço: R$ 750.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 8', 750000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Ford Model T de 1908', 750000)">Adicionar ao Carrinho</button>
         </div>
 
         <!-- Carro 9 -->
         <div class="car">
             <img src="/assets/img/car9.png" alt="Carro 9">
             <h2>Volkswagen Fusca</h2>
+            <p>Volkswagen Fusca 1966 é o carro do povo, ícone da cultura automotiva mundial, combinando confiabilidade,
+                simplicidade e carisma inigualável.</p>
             <p>Ano: 1966</p>
             <p>Preço: R$ 75.000,00</p>
-            <button onclick="adicionarAoCarrinho('Modelo 9', 75000)">Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho('Volkswagen Fusca 1966', 75000)">Adicionar ao Carrinho</button>
         </div>
     </div>
 

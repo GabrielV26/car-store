@@ -81,6 +81,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// ... (seu código JavaScript existente) ...
-

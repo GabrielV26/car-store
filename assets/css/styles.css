@@ -28,8 +28,6 @@ h1 {
     color: var(--cor-texto-primaria);
 }
 
-/* ... Seus outros estilos ... */
-
 .car-list {
     display: flex;
     flex-wrap: wrap;
@@ -40,25 +38,30 @@ h1 {
     width: 30%;
     margin: 20px 0;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* ... Seus outros estilos ... */
-
-
-/* Restante do seu CSS com as variáveis de cor */
-.car {
-    width: 30%;
-    margin: 20px 0;
-    padding: 10px;
     border: 1px solid var(--cor-texto-secundaria);
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+.car h2{
+    text-align: left;
+    font-size: 15px;
+}
+
+.car p:nth-of-type(1) {
+    text-align: justify;
+    font-size: 14px;
+}
+
+.car p:nth-of-type(2) {
+    text-align: end;
+    font-size: 14px;
+}
+
+.car p:nth-of-type(3) {
+    font-size: 14px;
+}
+
 
 .car img {
     max-width: 100%;
@@ -95,6 +98,7 @@ button:hover {
 .carrinho h2 {
     text-align: center;
     color: var(--cor-texto-primaria);
+    font-size: 14px;
 }
 
 .carrinho ul {
@@ -110,9 +114,8 @@ button:hover {
 #total {
     text-align: center;
     color: var(--cor-texto-primaria);
+    font-size: 12px;
 }
-
-/* ... Código anterior ... */
 
 .social-bar {
     display: flex;
@@ -155,13 +158,16 @@ button:hover {
 
 .navigation a {
     text-decoration: none;
-    color: var(--cor-texto-primaria);
+    color: var(--cor-primaria);
     font-weight: bold;
     font-size: 16px;
+    transition: all 2s ease;
 }
 
-/* ... Código anterior ... */
-/* ... Código anterior ... */
+.navigation a:hover{
+    color: firebrick;
+    transition: all 0.5s ease;
+}
 
 .top-bar {
     margin-top: -20px;
@@ -170,18 +176,15 @@ button:hover {
     align-items: baseline;
     margin-bottom: -20px;
     margin-right: 20px;
+    margin-left: -5px;
 }
-
-.logo-marca {
-    font-family: 'Times New Roman', serif; /* Ou escolha uma fonte clássica de sua preferência */
-    font-size: 36px; /* Ajuste conforme necessário */
-    font-weight: bold; /* Para destacar o termo "Motor" */
-    color: #91563E; /* Cor primária ou outra de sua preferência */
-    text-transform: uppercase; /* Para deixar em maiúsculas, se desejar */
+.logo-icon{
+    width: 100px;
+    height: 40px;
 }
 
 .cart-icon img {
-    width: 23px;
+    width: 25px;
     height: 20px;
     cursor: pointer;
 }
@@ -189,13 +192,6 @@ button:hover {
 .cart-icon:hover {
     opacity: 0.8;
 }
-
-/* ... Código anterior ... */
-/* ... (seus estilos CSS existentes) ... */
-
-/* ... (seus estilos CSS existentes) ... */
-
-/* ... (seus estilos CSS existentes) ... */
 
 .car button {
     background-color: var(--cor-primaria);
@@ -215,7 +211,7 @@ button:hover {
     background-color: firebrick;
 }
 
-/*NOVA barra de contato*/
+/* barra de contato*/
 .barra-contato {
     background-color: #f9f9f9;
     padding: 20px 0;
@@ -297,6 +293,7 @@ button:hover {
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
+    margin-right: 10px;
   }
 
   .slide-img {
@@ -313,34 +310,23 @@ button:hover {
   .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
-  
-
-
-/* ... (seus estilos CSS existentes) ... */
-/* Adicione estas media queries ao final do seu CSS */
-
-/* Estilos para telas menores (como tablets) */
-/* Estilos padrão para telas grandes (desktops) */
-
-/* ... (seus estilos existentes) ... */
 
 /* Media query para telas médias (tablets) */
 
 @media only screen and (max-width: 768px) {
     .car {
-        width: 45%; /* Ajuste conforme necessário */
+        width: 45%; 
     }
 
-    /* Adicione mais estilos responsivos conforme necessário */
 }
 
 /* Media query para telas pequenas (dispositivos móveis) */
 @media only screen and (max-width: 480px) {
     .car {
-        width: 100%; /* Ocupa a largura total */
+        width: 100%; 
     }
 
-    /* Adicione mais estilos responsivos conforme necessário */
+   
 }
 
 /* Estilos para Dispositivos Móveis */
@@ -373,25 +359,23 @@ button:hover {
         font-size: 12px;
     }
     .car {
-        width: 100%; /* Altera a largura dos carros para 100% em telas menores */
+        width: 100%; 
     }
 
     .navigation {
-        margin-top: 10px; /* Reduz a margem superior da navegação em telas menores */
+        margin-top: 10px; 
     }
 
     .social-bar {
-        padding: 5px; /* Reduz o preenchimento da barra social em telas menores */
+        padding: 5px; 
     }
 
     .top-bar {
-        align-items: baseline; /* Alinha os itens à esquerda em telas menores */
+        align-items: baseline; 
     }
 
     .cart-container {
-        flex-direction: column; /* Altera a direção da flexão para coluna em telas menores */
-        align-items: center; /* Alinha os itens ao centro em telas menores */
+        flex-direction: column; 
+        align-items: center; 
     }
 }
-
-
