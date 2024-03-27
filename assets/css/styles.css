@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 /* Paleta de Cores */
 :root {
     --cor-primaria: #91563E;
@@ -9,7 +12,7 @@
 /* Estilos Gerais */
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Cinzel",'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--cor-secundaria);
@@ -44,24 +47,31 @@ h1 {
     text-align: center;
 }
 .car h2{
+    font-family: "Cinzel";
     text-align: left;
     font-size: 15px;
 }
 
 .car p:nth-of-type(1) {
+    font-family: "Josefin Slab", serif;
     text-align: justify;
     font-size: 14px;
+    height: 50px;
+}
+
+.car p:nth-of-type(1):hover{
+    text-decoration: underline;
 }
 
 .car p:nth-of-type(2) {
     text-align: end;
     font-size: 14px;
+    font-weight: bold;
 }
 
 .car p:nth-of-type(3) {
     font-size: 14px;
 }
-
 
 .car img {
     max-width: 100%;
@@ -85,6 +95,9 @@ button:hover {
 
 /* Estilos para a área de detalhes do carrinho */
 .carrinho {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
     right: 0;
     background-color: #fff;
@@ -109,6 +122,10 @@ button:hover {
 .carrinho li {
     margin-bottom: 10px;
     color: var(--cor-texto-secundaria);
+}
+
+#finalizar-compra{
+    display: none;
 }
 
 #total {
@@ -174,7 +191,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: -20px;
+    margin-bottom: -13px;
     margin-right: 20px;
     margin-left: -5px;
 }
@@ -194,6 +211,7 @@ button:hover {
 }
 
 .car button {
+    font-family: "Cinzel";
     background-color: var(--cor-primaria);
     color: #fff;
     border: none;
@@ -203,7 +221,6 @@ button:hover {
 }
 
 .car button {
-    /* ... (seus estilos CSS existentes) ... */
     transition: background-color 0.3s ease;
 }
 
@@ -272,16 +289,17 @@ button:hover {
 
 .slideshow-container {
     position: relative;
-    max-width: auto;
+    max-width: 100%; /* Alterado para 100% para tornar responsivo */
+    overflow: hidden; /* Garante que as imagens não ultrapassem os limites do contêiner */
     margin: 0;
-    padding: 10px;
-  }
-  
-  .mySlides {
+    padding: 0; /* Removido o padding para garantir que o slide se ajuste ao tamanho do contêiner */
+}
+
+.mySlides {
     display: none;
-  }
-  
-  .prev, .next {
+}
+
+.prev, .next {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -293,23 +311,23 @@ button:hover {
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
-    margin-right: 10px;
-  }
-
-  .slide-img {
-    width: 100%;
-    height: 600px;
+    background-color: rgba(0, 0, 0, 0.5); /* Adicionado fundo ao botão para melhor visibilidade */
+    z-index: 1; /* Garante que os botões fiquem na frente das imagens */
 }
 
-  
-  .next {
+.slide-img {
+    width: 100%;
+    height: 500px;
+}
+
+.next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
-  .prev:hover, .next:hover {
+}
+
+.prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-  }
+}
 
 /* Media query para telas médias (tablets) */
 
@@ -318,15 +336,11 @@ button:hover {
         width: 45%; 
     }
 
-}
-
-/* Media query para telas pequenas (dispositivos móveis) */
-@media only screen and (max-width: 480px) {
-    .car {
-        width: 100%; 
+    .slide-img {
+        width: 100%;
+        height: auto;
     }
 
-   
 }
 
 /* Estilos para Dispositivos Móveis */
@@ -377,5 +391,23 @@ button:hover {
     .cart-container {
         flex-direction: column; 
         align-items: center; 
+    }
+}
+/* Media query para telas pequenas (dispositivos móveis) */
+@media only screen and (max-width: 480px) {
+    .car {
+        width: 100%; 
+    }
+
+    .navigation a {
+        font-size: 10px;
+    }
+
+   
+}
+@media only screen and (max-width: 360px) {
+
+    .navigation a {
+        font-size: 7px;
     }
 }

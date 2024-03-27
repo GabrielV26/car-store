@@ -21,16 +21,31 @@ function exibirItensCarrinho() {
     const carrinhoLista = document.getElementById('carrinho-lista');
     carrinhoLista.innerHTML = '';  // Limpa a lista para evitar duplicatas
 
-    carrinho.forEach(item => {
+    carrinho.forEach((item, index) => {
         const li = document.createElement('li');
         li.textContent = `${item.modelo} - R$ ${item.preco.toFixed(2)}`;
+
+        // Adiciona um botão de remover para cada item na lista
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'X';
+        btnRemover.addEventListener('click', () => removerDoCarrinho(index));
+        li.appendChild(btnRemover);
+
         carrinhoLista.appendChild(li);
     });
 
     // Exiba o carrinho ao adicionar um item
     carrinhoVisivel = true;
     const carrinhoElement = document.querySelector('.carrinho');
-    carrinhoElement.style.display = 'block';
+    carrinhoElement.style.display = 'flex';
+
+    // Verifique se o carrinho está vazio e mostre ou oculte o botão de finalizar compra
+    const finalizarCompraBtn = document.getElementById('finalizar-compra');
+    if (carrinho.length > 0) {
+        finalizarCompraBtn.style.display = 'block';
+    } else {
+        finalizarCompraBtn.style.display = 'none';
+    }
 }
 
 let carrinhoVisivel = false;
@@ -51,15 +66,18 @@ function toggleCart() {
         const iconRect = cartIcon.getBoundingClientRect();
         carrinhoElement.style.top = `${iconRect.bottom}px`;
         carrinhoElement.style.left = `${iconRect.left}px`;
-        carrinhoElement.style.display = 'block';
+        carrinhoElement.style.display = 'flex';
     } else {
         // Se o carrinho estiver oculto, simplesmente esconda-o
         carrinhoElement.style.display = 'none';
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Oculta o botão de finalizar compra quando a página é carregada
+    const finalizarCompraBtn = document.getElementById('finalizar-compra');
+    finalizarCompraBtn.style.display = 'none';
+
     const cartIcon = document.getElementById('cart-icon');
     const carrinho = document.getElementById('carrinho');
 
@@ -68,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         carrinhoVisivel = !carrinhoVisivel;
         atualizarCarrinho();
 
-        carrinho.style.display = carrinhoVisivel ? 'block' : 'none';
+        carrinho.style.display = carrinhoVisivel ? 'flex' : 'none';
     });
 
     // Adicione um evento de clique ao botão "Adicionar ao Carrinho"
@@ -81,3 +99,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function removerDoCarrinho(index) {
+    // Verifique se o índice é válido
+    if (index >= 0 && index < carrinho.length) {
+        // Remova o item do carrinho pelo índice
+        const removedItem = carrinho.splice(index, 1)[0];
+        // Subtraia o preço do item removido do total
+        total -= removedItem.preco;
+        // Atualize o carrinho na interface do usuário
+        exibirItensCarrinho();
+        // Atualize o total na interface do usuário
+        atualizarCarrinho();
+    }
+}
