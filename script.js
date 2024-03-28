@@ -5,6 +5,9 @@ function adicionarAoCarrinho(modelo, preco) {
     carrinho.push({ modelo, preco });
     total += preco;
 
+    // Atualiza o número de itens no carrinho
+    atualizarNumeroItensCarrinho();
+
     // Chame a função exibirItensCarrinho para mostrar os itens do carrinho
     exibirItensCarrinho();
 
@@ -12,39 +15,31 @@ function adicionarAoCarrinho(modelo, preco) {
     atualizarCarrinho();
 }
 
-function atualizarCarrinho() {
-    const totalElement = document.getElementById('total');
-    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+function removerDoCarrinho(index) {
+    // Verifique se o índice é válido
+    if (index >= 0 && index < carrinho.length) {
+        // Remova o item do carrinho pelo índice
+        const removedItem = carrinho.splice(index, 1)[0];
+        // Subtraia o preço do item removido do total
+        total -= removedItem.preco;
+        // Atualize o carrinho na interface do usuário
+        exibirItensCarrinho();
+        // Atualize o número de itens no carrinho
+        atualizarNumeroItensCarrinho();
+        // Atualize o total na interface do usuário
+        atualizarCarrinho();
+    }
 }
 
-function exibirItensCarrinho() {
-    const carrinhoLista = document.getElementById('carrinho-lista');
-    carrinhoLista.innerHTML = '';  // Limpa a lista para evitar duplicatas
+function atualizarNumeroItensCarrinho() {
+    const countElement = document.getElementById('cart-item-count');
+    countElement.textContent = carrinho.length.toString();
 
-    carrinho.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = `${item.modelo} - R$ ${item.preco.toFixed(2)}`;
-
-        // Adiciona um botão de remover para cada item na lista
-        const btnRemover = document.createElement('button');
-        btnRemover.textContent = 'X';
-        btnRemover.addEventListener('click', () => removerDoCarrinho(index));
-        li.appendChild(btnRemover);
-
-        carrinhoLista.appendChild(li);
-    });
-
-    // Exiba o carrinho ao adicionar um item
-    carrinhoVisivel = true;
-    const carrinhoElement = document.querySelector('.carrinho');
-    carrinhoElement.style.display = 'flex';
-
-    // Verifique se o carrinho está vazio e mostre ou oculte o botão de finalizar compra
-    const finalizarCompraBtn = document.getElementById('finalizar-compra');
+    // Verifica se o carrinho está vazio e controla a visibilidade do contador
     if (carrinho.length > 0) {
-        finalizarCompraBtn.style.display = 'block';
+        countElement.style.display = 'inline-block'; // Mostra o contador
     } else {
-        finalizarCompraBtn.style.display = 'none';
+        countElement.style.display = 'none'; // Oculta o contador
     }
 }
 
@@ -100,16 +95,37 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function removerDoCarrinho(index) {
-    // Verifique se o índice é válido
-    if (index >= 0 && index < carrinho.length) {
-        // Remova o item do carrinho pelo índice
-        const removedItem = carrinho.splice(index, 1)[0];
-        // Subtraia o preço do item removido do total
-        total -= removedItem.preco;
-        // Atualize o carrinho na interface do usuário
-        exibirItensCarrinho();
-        // Atualize o total na interface do usuário
-        atualizarCarrinho();
+function exibirItensCarrinho() {
+    const carrinhoLista = document.getElementById('carrinho-lista');
+    carrinhoLista.innerHTML = '';  // Limpa a lista para evitar duplicatas
+
+    carrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.modelo} - R$ ${item.preco.toFixed(2)}`;
+
+        // Adiciona um botão de remover para cada item na lista
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'X';
+        btnRemover.classList.add('btn-remover');
+        btnRemover.addEventListener('click', () => removerDoCarrinho(index));
+        li.appendChild(btnRemover);
+
+        carrinhoLista.appendChild(li);
+    });
+
+    // Verifique se o carrinho está vazio e mostre ou oculte o botão de finalizar compra
+    const finalizarCompraBtn = document.getElementById('finalizar-compra');
+    if (carrinho.length > 0) {
+        finalizarCompraBtn.style.display = 'block';
+    } else {
+        finalizarCompraBtn.style.display = 'none';
     }
+
+    // Atualize o número de itens no carrinho
+    atualizarNumeroItensCarrinho();
+}
+
+function atualizarCarrinho() {
+    const totalElement = document.getElementById('total');
+    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
 }

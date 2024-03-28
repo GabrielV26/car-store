@@ -10,20 +10,11 @@
 }
 
 /* Estilos Gerais */
-
 body {
-    font-family: "Cinzel",'Arial', sans-serif;
+    font-family: "Cinzel", 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--cor-secundaria);
-}
-
-.container {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--cor-fundo); /* Utilizando a variável de cor de fundo */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -31,6 +22,217 @@ h1 {
     color: var(--cor-texto-primaria);
 }
 
+/*Barra social*/
+.social-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #b9b9b9;
+    height: 1.8rem;
+    border: 1px solid var(--cor-texto-secundaria);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.logo-icon {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+}
+
+.rede-sociais {
+    display: flex;
+}
+
+.social-icon {
+    margin: 0 10px;
+}
+
+.social-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.navigation li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 2s ease;
+}
+
+.navigation a:hover {
+    color: firebrick;
+    transition: all 0.5s ease;
+}
+
+/*Barra de navegação*/
+.top-bar {
+    margin: -25px 20px -10px -5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cart-icon img {
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    opacity: 0.8;
+}
+
+.car button {
+    font-family: "Cinzel";
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.car button {
+    transition: background-color 0.3s ease;
+}
+
+.car button:hover {
+    background-color: firebrick;
+}
+
+/* Estilos para a área de detalhes do carrinho */
+.carrinho {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 9999;
+}
+
+
+.carrinho h2 {
+    text-align: center;
+    color: var(--cor-texto-primaria);
+    font-size: 14px;
+}
+
+.carrinho ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.carrinho li {
+    margin-bottom: 10px;
+    color: var(--cor-texto-secundaria);
+    margin: 0;
+}
+
+#finalizar-compra {
+    display: none;
+}
+
+#total {
+    text-align: center;
+    color: var(--cor-texto-primaria);
+    font-size: 12px;
+}
+
+/*Contador de itens do carrinho*/
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+#cart-item-count {
+    position: absolute;
+    top: -2px;
+    right: -12px;
+    background-color: firebrick;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 10px;
+    min-width: 10px;
+    text-align: center;
+    display: none;
+}
+
+
+/*Slide*/
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    /* Alterado para 100% para tornar responsivo */
+    overflow: hidden;
+    /* Garante que as imagens não ultrapassem os limites do contêiner */
+    margin: 0;
+    padding: 0;
+    /* Removido o padding para garantir que o slide se ajuste ao tamanho do contêiner */
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adicionado fundo ao botão para melhor visibilidade */
+    z-index: 1;
+    /* Garante que os botões fiquem na frente das imagens */
+}
+
+.slide-img {
+    width: 100%;
+    height: 600px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*Lista de carros*/
 .car-list {
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +248,8 @@ h1 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-.car h2{
+
+.car h2 {
     font-family: "Cinzel";
     text-align: left;
     font-size: 15px;
@@ -59,7 +262,7 @@ h1 {
     height: 50px;
 }
 
-.car p:nth-of-type(1):hover{
+.car p:nth-of-type(1):hover {
     text-decoration: underline;
 }
 
@@ -93,142 +296,7 @@ button:hover {
     background-color: firebrick;
 }
 
-/* Estilos para a área de detalhes do carrinho */
-.carrinho {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 9999;
-}
-
-
-.carrinho h2 {
-    text-align: center;
-    color: var(--cor-texto-primaria);
-    font-size: 14px;
-}
-
-.carrinho ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.carrinho li {
-    margin-bottom: 10px;
-    color: var(--cor-texto-secundaria);
-}
-
-#finalizar-compra{
-    display: none;
-}
-
-#total {
-    text-align: center;
-    color: var(--cor-texto-primaria);
-    font-size: 12px;
-}
-
-.social-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #b9b9b9;
-    height: 1.8rem;
-    border: 1px solid var(--cor-texto-secundaria);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-
-}
-
-.rede-sociais{
-    display: flex;
-}
-.social-icon {
-    margin: 0 10px;
-}
-
-.social-icon img {
-    width: 25px;
-    height: 25px;
-}
-
-.navigation {
-    margin-top: 20px;
-}
-
-.navigation ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-.navigation li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: var(--cor-primaria);
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 2s ease;
-}
-
-.navigation a:hover{
-    color: firebrick;
-    transition: all 0.5s ease;
-}
-
-.top-bar {
-    margin-top: -20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: -13px;
-    margin-right: 20px;
-    margin-left: -5px;
-}
-.logo-icon{
-    width: 100px;
-    height: 40px;
-}
-
-.cart-icon img {
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.cart-icon:hover {
-    opacity: 0.8;
-}
-
-.car button {
-    font-family: "Cinzel";
-    background-color: var(--cor-primaria);
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.car button {
-    transition: background-color 0.3s ease;
-}
-
-.car button:hover {
-    background-color: firebrick;
-}
-
-/* barra de contato*/
+/* Barra de contato final*/
 .barra-contato {
     background-color: #f9f9f9;
     padding: 20px 0;
@@ -241,6 +309,9 @@ button:hover {
     justify-content: space-between;
     border: 1px solid var(--cor-texto-secundaria);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 .info-contato,
@@ -275,7 +346,7 @@ button:hover {
 }
 
 .form-contato button {
-    background-color: #333;
+    background-color: var(--cor-primaria);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -284,56 +355,13 @@ button:hover {
 }
 
 .form-contato button:hover {
-    background-color: #555;
+    background-color: firebrick;
 }
 
-.slideshow-container {
-    position: relative;
-    max-width: 100%; /* Alterado para 100% para tornar responsivo */
-    overflow: hidden; /* Garante que as imagens não ultrapassem os limites do contêiner */
-    margin: 0;
-    padding: 0; /* Removido o padding para garantir que o slide se ajuste ao tamanho do contêiner */
-}
-
-.mySlides {
-    display: none;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adicionado fundo ao botão para melhor visibilidade */
-    z-index: 1; /* Garante que os botões fiquem na frente das imagens */
-}
-
-.slide-img {
-    width: 100%;
-    height: 500px;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Media query para telas médias (tablets) */
-
+/* Media query para telas médias */
 @media only screen and (max-width: 768px) {
     .car {
-        width: 45%; 
+        width: 45%;
     }
 
     .slide-img {
@@ -345,15 +373,29 @@ button:hover {
 
 /* Estilos para Dispositivos Móveis */
 @media screen and (max-width: 600px) {
-    
+
+    .logo-icon {
+        width: 100px;
+        height: 35px;
+        position: absolute;
+        top: 3px;
+    }
+
+    .rede-sociais {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 11px;
+    }
+
     .social-icon img {
         width: 20px;
         height: 20px;
     }
 
     .cart-icon img {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         cursor: pointer;
     }
 
@@ -361,50 +403,116 @@ button:hover {
         font-size: 10px;
     }
 
+    .carrinho li {
+        font-size: 10px;
+    }
+
     #total {
         font-size: 10px;
     }
 
-    .logo-marca{
+    .logo-marca {
         font-size: 28px;
     }
 
-    .navigation a{
+    .navigation a {
         font-size: 12px;
     }
+
     .car {
-        width: 100%; 
+        width: 100%;
     }
 
     .navigation {
-        margin-top: 10px; 
+        margin-top: 10px;
     }
 
     .social-bar {
-        padding: 5px; 
+        padding: 5px;
     }
 
     .top-bar {
-        align-items: baseline; 
+        align-items: baseline;
     }
 
     .cart-container {
-        flex-direction: column; 
-        align-items: center; 
-    }
-}
-/* Media query para telas pequenas (dispositivos móveis) */
-@media only screen and (max-width: 480px) {
-    .car {
-        width: 100%; 
+        flex-direction: column;
+        align-items: center;
     }
 
-    .navigation a {
+    .cart-icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+        top: 6px;
+        right: -14px;
+    }
+
+    #finalizar-compra {
+        font-size: 8px;
+    }
+
+    .btn-remover {
+        font-family: "Cinzel";
+        font-size: 10px;
+        background-color: var(--cor-primaria);
+        color: #fff;
+        border: none;
+        padding: 2px 5px;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    .car h2 {
+        font-size: 13px;
+    }
+
+    .car button {
+        font-size: 8px;
+    }
+
+    .car p:nth-of-type(1) {
+        font-size: 12px;
+    }
+
+    .car p:nth-of-type(2) {
         font-size: 10px;
     }
 
-   
+    .car p:nth-of-type(3) {
+        font-size: 10px;
+    }
+
+    .container {
+        font-size: 9px;
+    }
+
+    .form-contato input[type="text"],
+    .form-contato input[type="email"],
+    .form-contato textarea {
+        font-size: 8px;
+    }
+
+    .form-contato button{
+        font-size: 9px;
+    }
+
 }
+
+/* Media query para telas pequenas (dispositivos móveis) */
+@media only screen and (max-width: 480px) {
+    .car {
+        width: 100%;
+    }
+
+    .navigation a {
+        font-size: 8px;
+    }
+
+}
+
+/* Media query para telas pequenas (dispositivos móveis) */
 @media only screen and (max-width: 360px) {
 
     .navigation a {
